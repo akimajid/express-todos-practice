@@ -46,27 +46,6 @@ const todosControllers = {
             return
         }
 
-        if (!newTodoData.date) {
-            res.status(400).json({
-                message: "Todo date is required!"
-            })
-            return
-        }
-
-        if (!newTodoData.action) {
-            res.status(400).json({
-                message: "Todo action is required!"
-            })
-            return
-        }
-
-        if (!newTodoData.status) {
-            res.status(400).json({
-                message: "Todo status is required!"
-            })
-            return
-        }
-
         newTodoData.id = nanoid()
 
         todosDB.push(newTodoData)
